@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="VAM Solution – Authorized Zoho One Implementation Partner. CRM, Books, People, Projects and 45+ apps for your business."/>
+<title>VAM Solution – Zoho One Implementation Partner</title>
+<link rel="stylesheet" href="vamsolution.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Particle Canvas -->
+<canvas id="particle-canvas"></canvas>
+
+<!-- Back to Top -->
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress" style="width:0%"></div>
+
+<!-- PARTICLE CANVAS -->
+<canvas id="particle-canvas"></canvas>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<!-- ===== NAVBAR ===== -->
+<nav id="mainNav">
+  <a href="#home" class="logo">
+    <div class="logo-icon">VS</div>
+    <div class="logo-text">VAM <span>Solution</span></div>
+  </a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#industries">Industries</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-actions">
+    <span class="nav-phone"><a href="tel:+919001090010">📞 +91 90010 90010</a></span>
+    <a href="#contact" class="nav-cta">Free Consultation</a>
+  </div>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#process" onclick="toggleMenu()">Process</a>
+  <a href="#industries" onclick="toggleMenu()">Industries</a>
+  <a href="#pricing" onclick="toggleMenu()">Pricing</a>
+  <a href="#contact" onclick="toggleMenu()">Contact Us</a>
+  <a href="tel:+919001090010" style="color:var(--gold)">📞 +91 90010 90010</a>
+  <a href="https://wa.me/919001090010?text=Hello%2C%20I%20want%20to%20know%20more%20about%20Zoho%20One%20implementation." target="_blank" rel="noopener" style="color:#25d366">💬 WhatsApp Chat</a>
+  <a href="mailto:vib@vamsolution.com" style="color:var(--accent)">📧 Email Us</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero-grid"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
+
+  <!-- Floating 3D Metric Cards -->
+  <div class="float-card float-card-1">
+    <div class="fc-label">Monthly Revenue</div>
+    <div class="fc-val">₹48.2L</div>
+    <div class="fc-change">↑ 23% this month</div>
+  </div>
+  <div class="float-card float-card-2">
+    <div class="fc-label">Leads Closed</div>
+    <div class="fc-val">342</div>
+    <div class="fc-change">↑ 18 today via CRM</div>
+  </div>
+  <div class="float-card float-card-3">
+    <div class="fc-label">SLA Met</div>
+    <div class="fc-val">97%</div>
+    <div class="fc-change">Tickets Resolved</div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge"><div class="badge-dot"></div>Authorized Zoho One Implementation Partner</div>
+	<div class="hero-badge"><div class="badge-dot"></div>Author Vibhu Gupta</div>
+    <h1>Transform Your<br>Business with<br><span class="accent">Zoho One</span> <span class="outline">Done Right.</span></h1>
+    <p class="hero-desc">VAM Solution delivers end-to-end Zoho One implementation — CRM, Finance, HR, Projects, Marketing — fully configured, integrated, and trained for your team.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Start Your Implementation →</a>
+      <a href="#process" class="btn-ghost">See How It Works</a>
+    </div>
+    <div class="hero-apps">
+      <div class="app-chip"><div class="app-chip-dot" style="background:#e8622a"></div>Zoho CRM</div>
+      <div class="app-chip"><div class="app-chip-dot" style="background:#f5a623"></div>Zoho Books</div>
+      <div class="app-chip"><div class="app-chip-dot" style="background:#3b9fd4"></div>Zoho People</div>
+      <div class="app-chip"><div class="app-chip-dot" style="background:#47b858"></div>Zoho Projects</div>
+      <div class="app-chip"><div class="app-chip-dot" style="background:#9b59b6"></div>Zoho Campaigns</div>
+      <div class="app-chip"><div class="app-chip-dot" style="background:#e74c3c"></div>Zoho Desk</div>
+      <div class="app-chip"><div class="app-chip-dot" style="background:#1abc9c"></div>Zoho Analytics</div>
+    </div>
+  </div>
+
+  <!-- 3D Dashboard -->
+  <div class="hero-visual" id="heroVis">
+    <div class="dash-wrap" id="dashWrap">
+      <div class="dash-mock">
+        <div class="dash-topbar">
+          <div class="dash-dot" style="background:#ff5f57"></div>
+          <div class="dash-dot" style="background:#febc2e"></div>
+          <div class="dash-dot" style="background:#28c840"></div>
+          <span class="dash-title">Zoho One — VAM Solution</span>
+        </div>
+        <div class="dash-body">
+          <div class="dash-stats">
+            <div class="dash-stat"><div class="dash-stat-label">Revenue</div><div class="dash-stat-val">₹48.2L</div><div class="dash-stat-change">↑ 23%</div></div>
+            <div class="dash-stat"><div class="dash-stat-label">Active Leads</div><div class="dash-stat-val">342</div><div class="dash-stat-change">↑ 18 new</div></div>
+            <div class="dash-stat"><div class="dash-stat-label">Tickets</div><div class="dash-stat-val">17</div><div class="dash-stat-change" style="color:#f5a623">5 pending</div></div>
+            <div class="dash-stat"><div class="dash-stat-label">Team</div><div class="dash-stat-val">84</div><div class="dash-stat-change">↑ 4 joined</div></div>
+          </div>
+          <div class="dash-bar-section">
+            <div class="dash-bar-label"><span>CRM Pipeline</span><span style="color:#f5a623">₹1.2Cr</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:72%;background:linear-gradient(90deg,#e8622a,#f5a623)"></div></div>
+          </div>
+          <div class="dash-bar-section">
+            <div class="dash-bar-label"><span>HR Attendance</span><span style="color:#22c55e">94%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:94%;background:#22c55e"></div></div>
+          </div>
+          <div class="dash-bar-section">
+            <div class="dash-bar-label"><span>Project Progress</span><span style="color:#3b9fd4">68%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:68%;background:#3b9fd4"></div></div>
+          </div>
+          <div class="dash-chart">
+            <div class="dash-cbar" style="height:38%"></div>
+            <div class="dash-cbar" style="height:52%"></div>
+            <div class="dash-cbar" style="height:44%"></div>
+            <div class="dash-cbar" style="height:68%"></div>
+            <div class="dash-cbar hi" style="height:88%"></div>
+            <div class="dash-cbar" style="height:58%"></div>
+            <div class="dash-cbar" style="height:78%"></div>
+          </div>
+          <div class="dash-apps-row">
+            <span class="dash-app-badge">CRM ✓</span>
+            <span class="dash-app-badge">Books ✓</span>
+            <span class="dash-app-badge">People ✓</span>
+            <span class="dash-app-badge">Analytics ✓</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stat-block reveal"><div class="stat-num">500+</div><div class="stat-label">Businesses Implemented</div></div>
+  <div class="stat-block reveal"><div class="stat-num">8+</div><div class="stat-label">Years of Zoho Expertise</div></div>
+  <div class="stat-block reveal"><div class="stat-num">45+</div><div class="stat-label">Zoho Apps Covered</div></div>
+  <div class="stat-block reveal"><div class="stat-num">98%</div><div class="stat-label">Client Satisfaction</div></div>
+  <div class="stat-block reveal"><div class="stat-num">24hr</div><div class="stat-label">Support Response</div></div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="section-inner">
+    <p class="section-tag reveal">Complete Zoho Ecosystem</p>
+    <h2 class="section-title reveal">All 45+ Zoho Apps.<br>One Expert Partner.</h2>
+    <p class="section-sub reveal">We implement, integrate, and train your team on every Zoho application — so you get the full power of Zoho One working seamlessly.</p>
+    <div class="apps-grid">
+      <div class="app-card reveal"><div class="app-icon-wrap" style="background:#fff3ee">🏆</div><h4>Zoho CRM</h4><p>Sales pipeline, lead management and automation tailored for your sales team.</p></div>
+      <div class="app-card reveal"><div class="app-icon-wrap" style="background:#fffbee">📊</div><h4>Zoho Books</h4><p>GST-ready accounting, invoicing, bank reconciliation and financial reporting.</p></div>
+      <div class="app-card reveal"><div class="app-icon-wrap" style="background:#eef6ff">👥</div><h4>Zoho People</h4><p>HR management, payroll, attendance, leave and performance tracking.</p></div>
+      <div class="app-card reveal"><div class="app-icon-wrap" style="background:#efffef">📁</div><h4>Zoho Projects</h4><p>Project planning, tasks, timesheets, milestones and Gantt charts.</p></div>
+      <div class="app-card reveal"><div class="app-icon-wrap" style="background:#f5eeff">📣</div><h4>Zoho Campaigns</h4><p>Email marketing, drip automation, audience segmentation and analytics.</p></div>
+      <div class="app-card reveal"><div class="app-icon-wrap" style="background:#fff0f0">🎧</div><h4>Zoho Desk</h4><p>Helpdesk ticketing, SLA management and multi-channel customer support.</p></div>
+      <div class="app-card reveal"><div class="app-icon-wrap" style="background:#eafbf4">📈</div><h4>Zoho Analytics</h4><p>Business intelligence dashboards, custom reports and deep data insights.</p></div>
+      <div class="app-card reveal"><div class="app-icon-wrap" style="background:#fffaee">📦</div><h4>Zoho Inventory</h4><p>Stock, purchase orders, warehouses and supply chain automation.</p></div>
+      <div class="app-card reveal"><div class="app-icon-wrap" style="background:#eef0ff">🔗</div><h4>Zoho Flow</h4><p>No-code workflow automation connecting Zoho with 500+ tools.</p></div>
+      <div class="app-card reveal"><div class="app-icon-wrap" style="background:#fff3ee">📧</div><h4>Zoho Mail</h4><p>Ad-free business email with team collaboration and 5GB per user.</p></div>
+      <div class="app-card reveal"><div class="app-icon-wrap" style="background:#eefff8">🧾</div><h4>Zoho Expense</h4><p>Expense reporting, multi-level approvals and reimbursements.</p></div>
+      <div class="app-card reveal"><div class="app-icon-wrap" style="background:#f0f4ff">🛠️</div><h4>Zoho Creator</h4><p>Build custom apps with low-code drag-and-drop platform.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<div class="process-section" id="process">
+  <div class="section-inner">
+    <p class="section-tag reveal" style="color:var(--gold)">Our Methodology</p>
+    <h2 class="section-title reveal" style="color:#fff">How We Implement Zoho One</h2>
+    <p class="section-sub reveal">A battle-tested 6-step framework used by 500+ businesses across India.</p>
+    <div class="process-grid">
+      <div class="process-step reveal"><div class="step-number">01</div><span class="step-icon">🔍</span><h3>Discovery & Audit</h3><p>We study your workflows, tools, pain points and goals to design the perfect Zoho blueprint.</p><span class="step-duration">Week 1</span></div>
+      <div class="process-step reveal"><div class="step-number">02</div><span class="step-icon">🗺️</span><h3>Solution Design</h3><p>Custom architecture — which apps, how they connect, automations and integration map.</p><span class="step-duration">Week 2</span></div>
+      <div class="process-step reveal"><div class="step-number">03</div><span class="step-icon">⚙️</span><h3>Configuration</h3><p>Set up modules, fields, pipelines, workflows, roles and permissions exactly as needed.</p><span class="step-duration">Week 3–4</span></div>
+      <div class="process-step reveal"><div class="step-number">04</div><span class="step-icon">📂</span><h3>Data Migration</h3><p>Clean transfer from Excel, Tally, legacy CRMs or any system with full validation.</p><span class="step-duration">Week 5</span></div>
+      <div class="process-step reveal"><div class="step-number">05</div><span class="step-icon">🎓</span><h3>Team Training</h3><p>Hands-on role-based training so every department is confident from day one.</p><span class="step-duration">Week 6</span></div>
+      <div class="process-step reveal"><div class="step-number">06</div><span class="step-icon">🚀</span><h3>Go Live & Support</h3><p>Smooth launch with hypercare, post-go-live fixes and ongoing AMC optimization.</p><span class="step-duration">Ongoing</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<div class="why-section">
+  <div class="section-inner">
+    <p class="section-tag reveal">Why VAM Solution</p>
+    <h2 class="section-title reveal">Your Most Trusted<br>Zoho Expert in India</h2>
+    <p class="section-sub reveal">We don't just install Zoho — we transform how your entire business operates.</p>
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="why-card-accent"></div><div class="why-icon-wrap" style="background:#fff3ee">🏅</div><h3>Zoho Authorized Partner</h3><p>Certified with deep expertise across the full Zoho One ecosystem and direct Zoho support access.</p></div>
+      <div class="why-card reveal"><div class="why-card-accent"></div><div class="why-icon-wrap" style="background:#fffbee">⚡</div><h3>Go-Live in 4–6 Weeks</h3><p>Proven methodology ensures you're fully operational in record time without disrupting your business.</p></div>
+      <div class="why-card reveal"><div class="why-card-accent"></div><div class="why-icon-wrap" style="background:#efffef">🎯</div><h3>Industry-Specific Solutions</h3><p>Pre-built configurations for manufacturing, retail, real estate, services and more — never generic.</p></div>
+      <div class="why-card reveal"><div class="why-card-accent"></div><div class="why-icon-wrap" style="background:#eef6ff">🔄</div><h3>Seamless Integrations</h3><p>We connect Zoho with payment gateways, ERP, e-commerce platforms and custom APIs.</p></div>
+      <div class="why-card reveal"><div class="why-card-accent"></div><div class="why-icon-wrap" style="background:#f5eeff">🛡️</div><h3>Dedicated Support Team</h3><p>AMC with SLA-backed support — certified experts just a call or message away.</p></div>
+      <div class="why-card reveal"><div class="why-card-accent"></div><div class="why-icon-wrap" style="background:#eafbf4">📊</div><h3>Measurable Business ROI</h3><p>We track efficiency gains, cost savings and revenue impact — real business value delivered.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- INDUSTRIES -->
+<section class="ind-section" id="industries">
+  <div class="section-inner">
+    <p class="section-tag reveal">Industries We Serve</p>
+    <h2 class="section-title reveal">Zoho One for Every Industry</h2>
+    <p class="section-sub reveal">From startups to enterprises — Zoho One across 20+ industries with proven results.</p>
+    <div class="ind-grid">
+      <div class="ind-card reveal"><span class="ind-icon">🏭</span><p>Manufacturing</p></div>
+      <div class="ind-card reveal"><span class="ind-icon">🏪</span><p>Retail & E-commerce</p></div>
+      <div class="ind-card reveal"><span class="ind-icon">🏢</span><p>Real Estate</p></div>
+      <div class="ind-card reveal"><span class="ind-icon">⚕️</span><p>Healthcare</p></div>
+      <div class="ind-card reveal"><span class="ind-icon">🏦</span><p>Finance & BFSI</p></div>
+      <div class="ind-card reveal"><span class="ind-icon">🎓</span><p>Education</p></div>
+      <div class="ind-card reveal"><span class="ind-icon">🚚</span><p>Logistics</p></div>
+      <div class="ind-card reveal"><span class="ind-icon">🔧</span><p>Field Services</p></div>
+      <div class="ind-card reveal"><span class="ind-icon">💻</span><p>IT & SaaS</p></div>
+      <div class="ind-card reveal"><span class="ind-icon">🏗️</span><p>Construction</p></div>
+      <div class="ind-card reveal"><span class="ind-icon">🌾</span><p>Agriculture</p></div>
+      <div class="ind-card reveal"><span class="ind-icon">🎨</span><p>Creative & Media</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<div class="testi-section">
+  <div class="section-inner">
+    <p class="section-tag reveal" style="color:var(--gold)">Client Success Stories</p>
+    <h2 class="section-title reveal" style="color:#fff">What Our Clients Say</h2>
+    <div class="testi-grid">
+      <div class="testi-card reveal"><div class="stars">★★★★★</div><p class="testi-quote">VAM Solution implemented Zoho CRM and Books in 5 weeks. Our sales team now has full pipeline visibility and we close deals 40% faster.</p><div class="testi-author"><div class="testi-avatar">RK</div><div><div class="testi-name">Rajesh Kumar</div><div class="testi-role">MD, Apex Manufacturing Pvt. Ltd.</div></div></div></div>
+      <div class="testi-card reveal"><div class="stars">★★★★★</div><p class="testi-quote">Zoho Inventory and Books integration is flawless. Stock reconciliation that took 3 days now takes 30 minutes. Exceptional work!</p><div class="testi-author"><div class="testi-avatar">PS</div><div><div class="testi-name">Priya Sharma</div><div class="testi-role">CEO, StyleZone Retail Chain</div></div></div></div>
+      <div class="testi-card reveal"><div class="stars">★★★★★</div><p class="testi-quote">From Zoho People to Projects and Analytics — setup was flawless. HR is automated and team productivity has doubled in 3 months.</p><div class="testi-author"><div class="testi-avatar">AM</div><div><div class="testi-name">Arun Mehta</div><div class="testi-role">Director, TechEdge Solutions</div></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="section-inner">
+    <p class="section-tag reveal">Implementation Packages</p>
+    <h2 class="section-title reveal">Simple, Transparent Pricing</h2>
+    <p class="section-sub reveal">All plans include data migration and team training. No hidden costs.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card reveal">
+        <div class="plan-name">Starter</div>
+        <div class="plan-desc">For small businesses getting started with Zoho</div>
+        <div class="plan-price">₹49,999</div>
+        <div class="plan-period">One-time implementation fee</div>
+        <ul class="plan-features">
+          <li>Up to 3 Zoho Apps</li><li>Up to 10 Users</li><li>Basic Configuration</li>
+          <li>Data Migration (Excel/CSV)</li><li>1-day Training</li><li>30-day Support</li>
+        </ul>
+        <button class="plan-btn plan-btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
+      </div>
+      <div class="pricing-card featured reveal">
+        <div class="featured-badge">✦ MOST POPULAR</div>
+        <div class="plan-name light">Professional</div>
+        <div class="plan-desc light">For growing businesses needing full Zoho setup</div>
+        <div class="plan-price light">₹1,24,999</div>
+        <div class="plan-period light">One-time implementation fee</div>
+        <ul class="plan-features">
+          <li class="light-li">Up to 8 Zoho Apps</li><li class="light-li">Up to 50 Users</li>
+          <li class="light-li">Advanced Config + Custom Fields</li>
+          <li class="light-li">Full Data Migration (Tally/CRM)</li>
+          <li class="light-li">Custom Workflows & Automation</li>
+          <li class="light-li">3-day Role-based Training</li>
+          <li class="light-li">90-day Support</li>
+          <li class="light-li">API Integration (1 system)</li>
+        </ul>
+        <button class="plan-btn plan-btn-solid" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Start Implementation</button>
+      </div>
+      <div class="pricing-card reveal">
+        <div class="plan-name">Enterprise</div>
+        <div class="plan-desc">For large organizations with complex requirements</div>
+        <div class="plan-price">Custom</div>
+        <div class="plan-period">Project-based pricing</div>
+        <ul class="plan-features">
+          <li>All 45+ Zoho Apps</li><li>Unlimited Users</li><li>Full Custom Development</li>
+          <li>Multi-system Integration</li><li>Dedicated Project Manager</li>
+          <li>On-site Training & Support</li><li>1-Year AMC Included</li><li>Priority 4hr SLA</li>
+        </ul>
+        <button class="plan-btn plan-btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Talk to Expert</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<div class="contact-section" id="contact">
+  <div class="contact-inner">
+
+    <!-- Left Info -->
+    <div class="contact-info reveal">
+      <p class="section-tag" style="color:var(--accent)">Get In Touch</p>
+      <h2>Book Your Free <span>Zoho One</span> Consultation</h2>
+      <p>Our certified Zoho experts will analyze your business and give you a custom plan — completely free, no commitment required.</p>
+
+      <div class="contact-details">
+        <div class="contact-item">
+          <div class="contact-item-icon">📞</div>
+          <div class="contact-item-text">
+            <p>Phone / Call</p>
+            <a href="tel:+919001090010">+91 90010 90010</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">💬</div>
+          <div class="contact-item-text">
+            <p>WhatsApp Chat</p>
+            <a href="https://wa.me/919001090010?text=Hello%2C%20I%20want%20to%20know%20more%20about%20Zoho%20One%20implementation." target="_blank" rel="noopener">Chat on WhatsApp →</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📧</div>
+          <div class="contact-item-text">
+            <p>Email Address</p>
+            <a href="mailto:vib@vamsolution.com">vib@vamsolution.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">🔗</div>
+          <div class="contact-item-text">
+            <p>LinkedIn</p>
+            <a href="https://www.linkedin.com/company/vamsolution" target="_blank" rel="noopener">linkedin.com/company/vamsolution</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">🏢</div>
+          <div class="contact-item-text">
+            <p>Office</p>
+            <a href="https://maps.google.com/?q=Noida,+Uttar+Pradesh" target="_blank" rel="noopener">Noida, Uttar Pradesh, India</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">🕐</div>
+          <div class="contact-item-text">
+            <p>Business Hours</p>
+            <span>Mon–Sat: 9:00 AM – 7:00 PM IST</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Buttons — All Clickable -->
+      <div class="social-row">
+        <a href="https://wa.me/919876543210?text=Hello%2C%20I%20want%20to%20know%20more%20about%20Zoho%20One%20implementation." target="_blank" rel="noopener" class="social-btn whatsapp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <a href="https://www.linkedin.com/company/vamsolution" target="_blank" rel="noopener" class="social-btn linkedin">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="mailto:info@vamsolution.com" class="social-btn email">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Email Us
+        </a>
+        <a href="tel:+919876543210" class="social-btn phone">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.28-1.28a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Now
+        </a>
+        <a href="https://youtube.com/@vamsolution" target="_blank" rel="noopener" class="social-btn youtube">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+          YouTube
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Form -->
+    <div class="form-card reveal">
+      <div class="form-progress">
+        <div class="prog-step"><div class="prog-dot active" id="pd1">1</div><span class="prog-label active" id="pl1">Your Info</span></div>
+        <div class="prog-line" id="pline1"></div>
+        <div class="prog-step"><div class="prog-dot" id="pd2">2</div><span class="prog-label" id="pl2">Requirements</span></div>
+        <div class="prog-line" id="pline2"></div>
+        <div class="prog-step"><div class="prog-dot" id="pd3">3</div><span class="prog-label" id="pl3">Schedule</span></div>
+      </div>
+      <div class="form-body">
+        <!-- Step 1 -->
+        <div class="form-step active" id="fs1">
+          <div class="field-row">
+            <div class="field"><label>Full Name *</label><input type="text" id="f-name" placeholder="e.g. Rajesh Kumar"/><div class="err-msg" id="e-name">Please enter your name</div></div>
+            <div class="field"><label>Company Name *</label><input type="text" id="f-company" placeholder="Your company name"/><div class="err-msg" id="e-company">Please enter company name</div></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label>Mobile / WhatsApp *</label><input type="tel" id="f-phone" placeholder="+91 98765 43210"/><div class="err-msg" id="e-phone">Enter a valid number</div></div>
+            <div class="field"><label>Work Email *</label><input type="email" id="f-email" placeholder="you@company.com"/><div class="err-msg" id="e-email">Enter a valid email</div></div>
+          </div>
+          <div class="field"><label>City / Location</label><input type="text" id="f-city" placeholder="e.g. Meerut, Delhi, Noida..."/></div>
+          <div class="form-btns"><div></div><button class="btn-next-sm" onclick="nextStep(2)">Next: Requirements →</button></div>
+        </div>
+        <!-- Step 2 -->
+        <div class="form-step" id="fs2">
+          <div class="field">
+            <label>Your Industry *</label>
+            <select id="f-industry">
+              <option value="">— Select your industry —</option>
+              <option>Manufacturing</option><option>Retail / E-commerce</option><option>Real Estate</option>
+              <option>Healthcare</option><option>IT / SaaS</option><option>Education</option>
+              <option>Distribution / Logistics</option><option>Finance / BFSI</option>
+              <option>Construction</option><option>Field Services</option><option>Other</option>
+            </select>
+            <div class="err-msg" id="e-industry">Please select your industry</div>
+          </div>
+          <div class="field">
+            <label>Which Zoho Apps? (Select all that apply)</label>
+            <div class="chips-wrap">
+              <div class="chip-btn" onclick="toggleChip(this)">Zoho CRM</div>
+              <div class="chip-btn" onclick="toggleChip(this)">Zoho Books</div>
+              <div class="chip-btn" onclick="toggleChip(this)">Zoho People</div>
+              <div class="chip-btn" onclick="toggleChip(this)">Zoho Desk</div>
+              <div class="chip-btn" onclick="toggleChip(this)">Zoho Projects</div>
+              <div class="chip-btn" onclick="toggleChip(this)">Zoho Analytics</div>
+              <div class="chip-btn" onclick="toggleChip(this)">Zoho Inventory</div>
+              <div class="chip-btn" onclick="toggleChip(this)">Zoho Campaigns</div>
+              <div class="chip-btn" onclick="toggleChip(this)">Zoho Flow</div>
+              <div class="chip-btn" onclick="toggleChip(this)">Zoho Creator</div>
+              <div class="chip-btn" onclick="toggleChip(this)">Zoho Expense</div>
+              <div class="chip-btn" onclick="toggleChip(this)">Zoho Mail</div>
+            </div>
+          </div>
+          <div class="field">
+            <label>Team Size: <span id="team-display" class="slider-val-display">11–50 people</span></label>
+            <div class="slider-wrap">
+              <input type="range" min="1" max="5" step="1" value="2" id="team-slider" oninput="updateTeam(this.value)"/>
+              <div class="slider-labels"><span>1–10</span><span>11–50</span><span>51–200</span><span>201–500</span><span>500+</span></div>
+            </div>
+          </div>
+          <div class="field"><label>Current Tools Being Used</label><input type="text" id="f-current" placeholder="e.g. Excel, Tally, Salesforce..."/></div>
+          <div class="field"><label>Specific Requirements or Goals</label><textarea id="f-note" placeholder="Tell us your biggest challenge or what you want to automate..."></textarea></div>
+          <div class="form-btns"><button class="btn-back-sm" onclick="nextStep(1)">← Back</button><button class="btn-next-sm" onclick="nextStep(3)">Next: Schedule →</button></div>
+        </div>
+        <!-- Step 3 -->
+        <div class="form-step" id="fs3">
+          <div class="field">
+            <label>Preferred Meeting Time *</label>
+            <div class="chips-wrap" id="time-chips">
+              <div class="chip-btn" onclick="selectSlot(this,'Morning')">Morning 9AM–12PM</div>
+              <div class="chip-btn" onclick="selectSlot(this,'Afternoon')">Afternoon 12PM–4PM</div>
+              <div class="chip-btn" onclick="selectSlot(this,'Evening')">Evening 4PM–7PM</div>
+            </div>
+            <div class="err-msg" id="e-slot">Please select a time slot</div>
+          </div>
+          <div class="field"><label>Preferred Date *</label><input type="date" id="f-date" style="color-scheme:dark;"/><div class="err-msg" id="e-date">Please select a date</div></div>
+          <div class="field">
+            <label>How Would You Like to Connect?</label>
+            <div class="chips-wrap">
+              <div class="chip-btn selected" onclick="toggleChip(this)">📞 Phone Call</div>
+              <div class="chip-btn" onclick="toggleChip(this)">💬 WhatsApp</div>
+              <div class="chip-btn" onclick="toggleChip(this)">🎥 Zoom / Meet</div>
+              <div class="chip-btn" onclick="toggleChip(this)">🏢 In-person</div>
+            </div>
+          </div>
+          <div class="field">
+            <label>How Soon to Start?</label>
+            <div class="chips-wrap">
+              <div class="chip-btn" onclick="toggleChip(this)">Just Exploring</div>
+              <div class="chip-btn selected" onclick="toggleChip(this)">1–3 Months</div>
+              <div class="chip-btn" onclick="toggleChip(this)">Urgent – ASAP</div>
+            </div>
+          </div>
+          <div class="form-btns"><button class="btn-back-sm" onclick="nextStep(2)">← Back</button><button class="btn-next-sm" onclick="submitForm()">Submit & Book Consultation ✓</button></div>
+        </div>
+        <!-- Success -->
+        <div class="form-step" id="fs-success">
+          <div class="success-panel">
+            <div style="font-size:30px;margin-bottom:16px;letter-spacing:6px">🎉 🚀 ✅</div>
+            <div class="success-ring">✓</div>
+            <h3>Consultation Booked!</h3>
+            <p>Our Zoho expert will contact you within 24 hours to confirm your appointment and discuss your requirements in detail.</p>
+            <div class="success-badges">
+              <a href="tel:+919001090010" class="success-badge">📞 +91 90010 90010</a>
+              <a href="mailto:vib@vamsolution.com" class="success-badge">📧 vib@vamsolution.com</a>
+              <a href="https://wa.me/919001090010" target="_blank" class="success-badge">💬 WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div class="cta-inner">
+    <h2>Ready to Run Your Business<br>on <span>Zoho One?</span></h2>
+    <p>Join 500+ businesses that trust VAM Solution to implement and manage their complete Zoho ecosystem.</p>
+    <div class="cta-btns">
+      <a href="#contact" class="btn-primary">Book Free Consultation →</a>
+      <a href="https://wa.me/919876543210?text=Hello%2C%20I%20want%20Zoho%20One%20consultation." target="_blank" class="btn-ghost">💬 WhatsApp Us Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="#home" class="logo"><div class="logo-icon">VS</div><div class="logo-text">VAM <span>Solution</span></div></a>
+      <p class="footer-brand-desc">Your trusted Zoho One implementation partner in India. We help businesses grow smarter with the full Zoho ecosystem.</p>
+      <div class="footer-partner">🏅 Authorized Zoho One Partner</div>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <a href="#services">Zoho CRM Implementation</a>
+      <a href="#services">Zoho Books & Finance</a>
+      <a href="#services">Zoho People & HR</a>
+      <a href="#services">Custom Integrations</a>
+      <a href="#services">Zoho Training</a>
+      <a href="#pricing">Annual Maintenance (AMC)</a>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <a href="#">About VAM Solution</a>
+      <a href="#">Our Team</a>
+      <a href="#">Case Studies</a>
+      <a href="#">Blog & Resources</a>
+      <a href="#">Careers</a>
+    </div>
+    <div class="footer-col">
+      <h5>Contact & Connect</h5>
+      <a href="mailto:vib@vamsolution.com">📧 vib@vamsolution.com</a>
+      <a href="tel:+9190010900010">📞 +91 90010 90010</a>
+      <a href="https://wa.me/919876543210" target="_blank" rel="noopener">💬 WhatsApp Chat</a>
+      <a href="https://www.linkedin.com/company/vamsolution" target="_blank" rel="noopener">🔗 LinkedIn</a>
+      <a href="https://youtube.com/@vamsolution" target="_blank" rel="noopener">▶ YouTube Channel</a>
+      <a href="https://maps.google.com/?q=Noida,UP" target="_blank" rel="noopener">📍 Noida, Uttar Pradesh</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 VAM Solution. All Rights Reserved. | Zoho Authorized Implementation Partner</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+/* --- Custom Cursor --- */
+var dot=document.getElementById('cursorDot'),ring=document.getElementById('cursorRing');
+var mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',function(e){
+  mx=e.clientX;my=e.clientY;
+  dot.style.left=mx+'px';dot.style.top=my+'px';
+});
+(function animCursor(){
+  rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;
+  ring.style.left=rx+'px';ring.style.top=ry+'px';
+  requestAnimationFrame(animCursor);
+})();
+document.querySelectorAll('a,button,.chip-btn,.app-card,.ind-card').forEach(function(el){
+  el.addEventListener('mouseenter',function(){ring.style.width='52px';ring.style.height='52px';ring.style.borderColor='rgba(232,98,42,0.7)';});
+  el.addEventListener('mouseleave',function(){ring.style.width='32px';ring.style.height='32px';ring.style.borderColor='rgba(232,98,42,0.5)';});
+});
+
+/* --- Particle Canvas --- */
+var canvas=document.getElementById('particle-canvas');
+var ctx=canvas.getContext('2d');
+var particles=[];
+function resizeCanvas(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
+resizeCanvas();
+window.addEventListener('resize',resizeCanvas);
+for(var i=0;i<70;i++){
+  particles.push({
+    x:Math.random()*window.innerWidth,
+    y:Math.random()*window.innerHeight,
+    r:Math.random()*1.5+0.5,
+    vx:(Math.random()-0.5)*0.3,
+    vy:(Math.random()-0.5)*0.3,
+    o:Math.random()*0.4+0.1
+  });
+}
+function drawParticles(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach(function(p){
+    p.x+=p.vx;p.y+=p.vy;
+    if(p.x<0)p.x=canvas.width;if(p.x>canvas.width)p.x=0;
+    if(p.y<0)p.y=canvas.height;if(p.y>canvas.height)p.y=0;
+    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle='rgba(245,166,35,'+p.o+')';ctx.fill();
+  });
+  // draw lines between close particles
+  for(var i=0;i<particles.length;i++){
+    for(var j=i+1;j<particles.length;j++){
+      var dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y;
+      var dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<120){
+        ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);
+        ctx.lineTo(particles[j].x,particles[j].y);
+        ctx.strokeStyle='rgba(232,98,42,'+(0.06*(1-dist/120))+')';
+        ctx.lineWidth=0.5;ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(drawParticles);
+}
+drawParticles();
+
+/* --- Nav Scroll + Back Top --- */
+window.addEventListener('scroll',function(){
+  var nav=document.getElementById('mainNav'),btn=document.getElementById('backTop');
+  if(window.scrollY>80)nav.classList.add('scrolled');else nav.classList.remove('scrolled');
+  if(window.scrollY>450)btn.classList.add('show');else btn.classList.remove('show');
+});
+
+/* --- Mobile Menu --- */
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+
+/* --- Scroll Reveal --- */
+var revObs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('visible');});},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){revObs.observe(el);});
+
+/* --- 3D Hero Dashboard Mouse Tilt --- */
+var heroSec=document.querySelector('.hero'),dashWrap=document.getElementById('dashWrap');
+if(heroSec&&dashWrap){
+  heroSec.addEventListener('mousemove',function(e){
+    var r=heroSec.getBoundingClientRect();
+    var dx=(e.clientX-r.left)/r.width-0.5;
+    var dy=(e.clientY-r.top)/r.height-0.5;
+    dashWrap.style.transform='rotateY('+(dx*-18-6)+'deg) rotateX('+(dy*10+3)+'deg)';
+    dashWrap.style.transition='transform 0.08s';
+  });
+  heroSec.addEventListener('mouseleave',function(){
+    dashWrap.style.transform='rotateY(-6deg) rotateX(3deg)';
+    dashWrap.style.transition='transform 0.7s ease';
+  });
+}
+
+/* --- Form chip toggle --- */
+function toggleChip(el){el.classList.toggle('selected');}
+var selectedSlot='';
+function selectSlot(el,val){
+  document.querySelectorAll('#time-chips .chip-btn').forEach(function(c){c.classList.remove('selected');});
+  el.classList.add('selected');selectedSlot=val;
+  document.getElementById('e-slot').style.display='none';
+}
+var teamLabels=['1–10 people','11–50 people','51–200 people','201–500 people','500+ people'];
+function updateTeam(v){document.getElementById('team-display').textContent=teamLabels[v-1];}
+
+/* --- Multi-step Form --- */
+function nextStep(n){
+  if(n===2&&!validateStep1())return;
+  if(n===3&&!validateStep2())return;
+  [1,2,3].forEach(function(i){
+    var fs=document.getElementById('fs'+i);if(fs)fs.classList.remove('active');
+    var pd=document.getElementById('pd'+i),pl=document.getElementById('pl'+i);
+    pd.classList.remove('active','done');pl.classList.remove('active');
+    if(i<n){pd.classList.add('done');pd.textContent='✓';}else{pd.textContent=i;}
+    var ln=document.getElementById('pline'+i);if(ln)ln.classList.remove('done');
+  });
+  for(var j=1;j<n;j++){var ln=document.getElementById('pline'+j);if(ln)ln.classList.add('done');}
+  document.getElementById('fs'+n).classList.add('active');
+  document.getElementById('pd'+n).classList.add('active');
+  document.getElementById('pl'+n).classList.add('active');
+}
+function showErr(id,show){document.getElementById(id).style.display=show?'block':'none';}
+function validateStep1(){
+  var ok=true;
+  var nm=document.getElementById('f-name').value.trim();
+  var co=document.getElementById('f-company').value.trim();
+  var ph=document.getElementById('f-phone').value.trim();
+  var em=document.getElementById('f-email').value.trim();
+  showErr('e-name',!nm);if(!nm)ok=false;
+  showErr('e-company',!co);if(!co)ok=false;
+  showErr('e-phone',ph.length<7);if(ph.length<7)ok=false;
+  showErr('e-email',!em.includes('@'));if(!em.includes('@'))ok=false;
+  return ok;
+}
+function validateStep2(){var ind=document.getElementById('f-industry').value;showErr('e-industry',!ind);return!!ind;}
+function submitForm(){
+  var dt=document.getElementById('f-date').value,ok=true;
+  if(!selectedSlot){document.getElementById('e-slot').style.display='block';ok=false;}
+  if(!dt){document.getElementById('e-date').style.display='block';ok=false;}else{document.getElementById('e-date').style.display='none';}
+  if(!ok)return;
+  ['fs1','fs2','fs3'].forEach(function(id){document.getElementById(id).classList.remove('active');});
+  [1,2,3].forEach(function(i){
+    var pd=document.getElementById('pd'+i);pd.classList.remove('active');pd.classList.add('done');pd.textContent='✓';
+    document.getElementById('pl'+i).classList.remove('active');
+    var ln=document.getElementById('pline'+i);if(ln)ln.classList.add('done');
+  });
+  document.getElementById('fs-success').classList.add('active');
+}
+document.addEventListener('DOMContentLoaded',function(){
+  var today=new Date().toISOString().split('T')[0];
+  document.getElementById('f-date').min=today;
+});
+
+/* --- Smooth Scroll --- */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var t=document.querySelector(this.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
+  });
+});
+
+/* --- 3D Card Tilt on Mouse --- */
+document.querySelectorAll('.app-card,.why-card,.ind-card,.testi-card,.pricing-card').forEach(function(card){
+  card.addEventListener('mousemove',function(e){
+    var r=card.getBoundingClientRect();
+    var dx=(e.clientX-r.left)/r.width-0.5;
+    var dy=(e.clientY-r.top)/r.height-0.5;
+    card.style.transform='translateY(-8px) rotateX('+(dy*-12)+'deg) rotateY('+(dx*12)+'deg)';
+  });
+  card.addEventListener('mouseleave',function(){
+    card.style.transform='';
+  });
+});
+</script>
+
+<script>
+/* ---- SCROLL PROGRESS BAR ---- */
+window.addEventListener('scroll', function(){
+  var el = document.getElementById('scroll-progress');
+  if(el){
+    var pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+    el.style.width = Math.min(pct,100) + '%';
+  }
+});
+
+/* ---- NAV ACTIVE LINK ---- */
+var navLinks = document.querySelectorAll('.nav-links a');
+var sections = document.querySelectorAll('section[id], div[id]');
+window.addEventListener('scroll', function(){
+  var scrollY = window.scrollY + 100;
+  sections.forEach(function(sec){
+    var top = sec.offsetTop, h = sec.offsetHeight;
+    var id = sec.getAttribute('id');
+    if(scrollY >= top && scrollY < top + h){
+      navLinks.forEach(function(a){ a.classList.remove('active'); });
+      var active = document.querySelector('.nav-links a[href="#'+id+'"]');
+      if(active) active.classList.add('active');
+    }
+  });
+});
+
+/* ---- MAGNETIC BUTTONS ---- */
+document.querySelectorAll('.btn-primary, .btn-ghost, .nav-cta').forEach(function(btn){
+  btn.addEventListener('mousemove', function(e){
+    var r = btn.getBoundingClientRect();
+    var x = e.clientX - r.left - r.width/2;
+    var y = e.clientY - r.top - r.height/2;
+    btn.style.transform = 'translate('+x*0.18+'px,'+y*0.18+'px) translateY(-3px)';
+  });
+  btn.addEventListener('mouseleave', function(){
+    btn.style.transform = '';
+  });
+});
+
+/* ---- 3D TILT CARDS with SHINE ---- */
+function addTiltShine(selector){
+  document.querySelectorAll(selector).forEach(function(card){
+    // Add shine div
+    var shine = document.createElement('div');
+    shine.className = 'tilt-shine';
+    card.appendChild(shine);
+
+    card.addEventListener('mousemove', function(e){
+      var r = card.getBoundingClientRect();
+      var x = e.clientX - r.left;
+      var y = e.clientY - r.top;
+      var cx = r.width/2, cy = r.height/2;
+      var rx = (y - cy) / cy * 10;
+      var ry = (cx - x) / cx * 10;
+      card.style.transform = 'perspective(800px) rotateX('+rx+'deg) rotateY('+ry+'deg) translateY(-6px)';
+      var pctX = (x/r.width*100).toFixed(1)+'%';
+      var pctY = (y/r.height*100).toFixed(1)+'%';
+      shine.style.setProperty('--mx', pctX);
+      shine.style.setProperty('--my', pctY);
+    });
+    card.addEventListener('mouseleave', function(){
+      card.style.transform = '';
+    });
+  });
+}
+addTiltShine('.app-card');
+addTiltShine('.why-card');
+addTiltShine('.ind-card');
+addTiltShine('.testi-card');
+addTiltShine('.pricing-card');
+
+/* ---- ANIMATED COUNTER on STATS ---- */
+function animateCounter(el, target, suffix){
+  var start = 0;
+  var isNum = !isNaN(parseInt(target));
+  if(!isNum){ el.textContent = target; return; }
+  var end = parseInt(target);
+  var dur = 1800;
+  var startTime = null;
+  function step(ts){
+    if(!startTime) startTime = ts;
+    var prog = Math.min((ts - startTime)/dur, 1);
+    var ease = 1 - Math.pow(1-prog, 3);
+    el.textContent = Math.floor(ease*end) + suffix;
+    if(prog < 1) requestAnimationFrame(step);
+    else el.textContent = target + suffix;
+  }
+  requestAnimationFrame(step);
+}
+var statsObserver = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){
+      var nums = entry.target.querySelectorAll('.stat-num');
+      nums.forEach(function(num){
+        var raw = num.textContent.trim();
+        if(raw.endsWith('+')) animateCounter(num, raw.replace('+',''), '+');
+        else if(raw.endsWith('%')) animateCounter(num, raw.replace('%',''), '%');
+        else { num.textContent = raw; }
+      });
+      statsObserver.unobserve(entry.target);
+    }
+  });
+}, {threshold: 0.4});
+var statsStrip = document.querySelector('.stats-strip');
+if(statsStrip) statsObserver.observe(statsStrip);
+
+/* ---- PARTICLE CANVAS ---- */
+(function(){
+  var canvas = document.getElementById('particle-canvas');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var W, H, particles = [];
+  function resize(){ W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+  resize();
+  window.addEventListener('resize', resize);
+
+  var COLORS = ['rgba(232,98,42,', 'rgba(245,166,35,', 'rgba(26,58,107,', 'rgba(255,255,255,'];
+
+  function Particle(){
+    this.reset();
+  }
+  Particle.prototype.reset = function(){
+    this.x = Math.random() * W;
+    this.y = Math.random() * H;
+    this.r = Math.random() * 1.8 + 0.4;
+    this.vx = (Math.random()-0.5) * 0.3;
+    this.vy = (Math.random()-0.5) * 0.3;
+    this.alpha = Math.random() * 0.4 + 0.1;
+    this.color = COLORS[Math.floor(Math.random()*COLORS.length)];
+  };
+  Particle.prototype.update = function(){
+    this.x += this.vx; this.y += this.vy;
+    if(this.x<0||this.x>W||this.y<0||this.y>H) this.reset();
+  };
+  Particle.prototype.draw = function(){
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r, 0, Math.PI*2);
+    ctx.fillStyle = this.color + this.alpha + ')';
+    ctx.fill();
+  };
+
+  for(var i=0; i<90; i++) particles.push(new Particle());
+
+  // Draw connections
+  function drawLines(){
+    for(var a=0; a<particles.length; a++){
+      for(var b=a+1; b<particles.length; b++){
+        var dx = particles[a].x - particles[b].x;
+        var dy = particles[a].y - particles[b].y;
+        var dist = Math.sqrt(dx*dx+dy*dy);
+        if(dist < 120){
+          ctx.beginPath();
+          ctx.moveTo(particles[a].x, particles[a].y);
+          ctx.lineTo(particles[b].x, particles[b].y);
+          ctx.strokeStyle = 'rgba(232,98,42,'+(0.06*(1-dist/120))+')';
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  var mouseX = -999, mouseY = -999;
+  window.addEventListener('mousemove', function(e){ mouseX=e.clientX; mouseY=e.clientY; });
+
+  function loop(){
+    ctx.clearRect(0,0,W,H);
+    particles.forEach(function(p){
+      // Subtle mouse repel
+      var dx = p.x - mouseX, dy = p.y - mouseY;
+      var d = Math.sqrt(dx*dx+dy*dy);
+      if(d < 80){
+        p.x += (dx/d)*0.8;
+        p.y += (dy/d)*0.8;
+      }
+      p.update(); p.draw();
+    });
+    drawLines();
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+
+/* ---- HERO PARALLAX ---- */
+window.addEventListener('scroll', function(){
+  var sy = window.scrollY;
+  var heroContent = document.querySelector('.hero-content');
+  var heroVis = document.querySelector('.hero-visual');
+  if(heroContent) heroContent.style.transform = 'translateY('+sy*0.12+'px)';
+  if(heroVis) heroVis.style.transform = 'translateY(calc(-50% + '+sy*0.08+'px))';
+});
+
+/* ---- SMOOTH SECTION HIGHLIGHT ---- */
+document.querySelectorAll('.app-card, .why-card, .ind-card, .testi-card, .pricing-card').forEach(function(card, i){
+  card.style.transitionDelay = (i % 4) * 0.05 + 's';
+});
+</script>
+
+</body>
+</html>
